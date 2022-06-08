@@ -1,4 +1,4 @@
-﻿$SuffixMods = import-csv -Path "C:\Users\Shambler\Desktop\SuffixMods.csv"
+﻿$SuffixMods = import-csv -Path ".\SuffixMods.csv"
 $ArmorTypeArray = @('Normal','Elite','Exceptional','Baller')
 
 Function Get-RElementalModifier($C)
