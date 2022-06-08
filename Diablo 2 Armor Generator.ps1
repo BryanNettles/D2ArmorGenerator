@@ -9,13 +9,22 @@ $Estart.AddRange(0..3)
 $Emod = @()
 $Etrack = @()
 
-    Function Get-Modifier ($GMN){
+ Function Get-Modifier ($GMN, $C){
+        
+        Switch ($C)
+        {
+        0 {$GMMin = 5;$GMMax = 11}
+        1 {$GMMin = 11;$GMMax = 26}
+        2 {$GMMin = 26;$GMMax = 36}
+        3 {$GMMin = 36;$GMMax = 51}
+        }
+
         Switch ($GMN)
         {
-        0 {$GM = '+' + [string]$(Get-Random -Minimum 1 -Maximum 21) + ' Fire resist'}
-        1 {$GM = '+' + [string]$(Get-Random -Minimum 1 -Maximum 21) + ' Cold resist'}
-        2 {$GM = '+' + [string]$(Get-Random -Minimum 1 -Maximum 21) + ' Lightning resist'}
-        3 {$GM = '+' + [string]$(Get-Random -Minimum 1 -Maximum 21) + ' Poison resist'}
+        0 {$GM = '+' + [string]$(Get-Random -Minimum $GMMin -Maximum $GMMax) + ' Fire resist'}
+        1 {$GM = '+' + [string]$(Get-Random -Minimum $GMMin -Maximum $GMMax) + ' Cold resist'}
+        2 {$GM = '+' + [string]$(Get-Random -Minimum $GMMin -Maximum $GMMax) + ' Lightning resist'}
+        3 {$GM = '+' + [string]$(Get-Random -Minimum $GMMin -Maximum $GMMax) + ' Poison resist'}
         }
         Return $GM
     }
