@@ -51,7 +51,7 @@ Return $Emod
 
 
 
-Function Create-Armor ($C1, $C2, $C3, $EmC){
+Function Create-Armor ($C1, $C2, $C3){
 
     If ($C3 -notin ($ArmorTypeArray)){
         return "Invalid Armor Tier. Please try again."
@@ -94,6 +94,6 @@ return $A
 }
 
 
-$Armor = Create-Armor -C1 'Armor' -C2 'Chest' -C3 "$(read-host -Prompt "Select one from $($ArmorTypeArray)")" -Emc 1; $Armor
+$Armor = Create-Armor -C1 'Armor' -C2 'Chest' -C3 "$(read-host -Prompt "Select one from $($ArmorTypeArray)")"; $Armor
 
 
