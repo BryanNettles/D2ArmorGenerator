@@ -44,6 +44,11 @@ Return $Emod
 
 Function Create-Armor ($C1, $C2, $C3, $EmC){
 
+    If ($C3 -notin ($ArmorTypeArray)){
+        return "Invalid Armor Tier. Please try again."
+    }
+
+
 $Suffix = $Suffixmods[$(get-random -Minimum 0 -Maximum 4)]
 
 
